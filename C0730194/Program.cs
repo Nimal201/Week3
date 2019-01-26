@@ -15,16 +15,48 @@ namespace C0730194
 
     class Countryside
     {
-        //How will i make some Villages?
+        Village Alst;
+        Village Maeland;
+        Village Schenig;
+
+        public void InitializeMap()
+        {
+            Alst = new Village();
+            Alst.VillageName = "Alst";
+            Maeland = new Village();
+            Maeland.VillageName = "Maeland";
+            Maeland.isAstrildeHere = true;
+            Schenig = new Village();
+            Schenig.VillageName = "Schenig";
+
+            Alst.NextVillage = Maeland;
+            Maeland.NextVillage = Schenig;
+            Schenig.NextVillage = Alst;
+        }
+
+        public void FindAstrilde()
+        {
+
+            Village CurrentVillage = this.Maeland;
+            if (CurrentVillage.isAstrildeHere)
+            {
+                Console.WriteLine("Hugi found Astrilde!!! Celebrations! XOXO");
+            }
+            Village NextVillage;
+
+            NextVillage = CurrentVillage.NextVillage;
+
+
+        }
     }
 
-    class Village {
-        Village PreviousVillage;
-        Village NextVillage;
-        String VillageName;
-
-        bool isAtstrildeHere = false;
+    class Village
+    {
+        public Village PreviousVillage;
+        public Village NextVillage;
+        public String VillageName;
+        public bool isAstrildeHere = false;
         public Village() { }
-
     }
+   
 }
