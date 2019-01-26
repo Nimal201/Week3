@@ -12,4 +12,19 @@ namespace C0730194
         {
         }
     }
+
+    class Countryside
+    {
+        //How will i make some Villages?
+    }
+
+    class Village {
+        Village PreviousVillage;
+        Village NextVillage;
+        String VillageName;
+
+        bool isAtstrildeHere = false;
+        public Village() { }
+
+    }
 }
